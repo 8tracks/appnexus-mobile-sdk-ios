@@ -68,6 +68,11 @@
 @property (nonatomic, readwrite, getter=isOpaque) BOOL opaque;
 
 /**
+ The ad view controller's modal presentation style
+ */
+@property (nonatomic, readwrite, assign) UIModalTransitionStyle modalTransitionStyle;
+
+/**
  Whether the interstitial ad has been fetched and is ready to
  display.
  */

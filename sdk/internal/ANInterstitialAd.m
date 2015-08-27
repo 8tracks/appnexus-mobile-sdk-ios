@@ -58,6 +58,7 @@ NSString *const kANInterstitialAdViewAuctionInfoKey = @"kANInterstitialAdViewAuc
     _allowedAdSizes = [self getDefaultAllowedAdSizes];
     _closeDelay = kANInterstitialDefaultCloseButtonDelay;
     _opaque = YES;
+    _modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 }
 
 - (instancetype)initWithPlacementId:(NSString *)placementId {
@@ -135,6 +136,7 @@ NSString *const kANInterstitialAdViewAuctionInfoKey = @"kANInterstitialAdViewAuc
         if (self.backgroundColor) {
             self.controller.backgroundColor = self.backgroundColor;
         }
+        self.controller.modalTransitionStyle = self.modalTransitionStyle;
         self.controller.modalPresentationStyle = UIModalPresentationFullScreen;
         if ([self.controller respondsToSelector:@selector(modalPresentationCapturesStatusBarAppearance)]) {
             self.controller.modalPresentationCapturesStatusBarAppearance = YES;
