@@ -1,8 +1,8 @@
 {
   "name": "AppNexusSDK",
-  "version": "2.4.0",
+  "version": "2.9",
   "summary": "AppNexus iOS Mobile Advertising SDK",
-  "description": "                   Our mobile advertising SDK gives developers a fast and convenient way to monetize their apps.\n",
+  "description": "Our mobile advertising SDK gives developers a fast and convenient way to monetize their apps.",
   "homepage": "https://github.com/appnexus/mobile-sdk-ios",
   "license": {
     "type": "Apache License, Version 2.0",
@@ -16,7 +16,7 @@
   },
   "source": {
     "git": "https://github.com/appnexus/mobile-sdk-ios.git",
-    "tag": "RC2.4.0"
+    "tag": "RC2.9"
   },
   "default_subspecs": "AppNexusSDK",
   "requires_arc": true,
@@ -61,7 +61,7 @@
         ]
       },
       "source_files": "mediation/mediatedviews/GoogleAdMob/*.{h,m}",
-      "private_header_files": "mediation/mediatedviews/GoogleAdMob/*.h",
+      "public_header_files": "mediation/mediatedviews/GoogleAdMob/ANAdAdapterNativeAdMob.h",
       "vendored_frameworks": "mediation/mediatedviews/GoogleAdMob/GoogleAdMobSDK/GoogleMobileAds.framework"
     },
     {
@@ -146,7 +146,7 @@
         "mediation/mediatedviews/InMobi/ANAdAdapterBaseInMobi.h",
         "mediation/mediatedviews/InMobi/ANAdAdapterNativeInMobi.h"
       ],
-      "vendored_libraries": "mediation/mediatedviews/InMobi/InMobiSDK/libInMobi-4.5.3.a",
+      "vendored_libraries": "mediation/mediatedviews/InMobi/InMobiSDK/libInMobi-5.2.0.a",
       "frameworks": [
         "AVFoundation",
         "AudioToolbox"
@@ -177,9 +177,12 @@
       },
       "source_files": "mediation/mediatedviews/Vungle/*.{h,m}",
       "public_header_files": "mediation/mediatedviews/Vungle/ANAdAdapterBaseVungle.h",
+      "resources": "mediation/mediatedviews/Vungle/VungleSDK/VungleSDK.embeddedframework/Resources/*.*",
       "vendored_frameworks": "mediation/mediatedviews/Vungle/VungleSDK/VungleSDK.embeddedframework/VungleSDK.framework",
-      "resources": "mediation/mediatedviews/Vungle/VungleSDK/**/*.{db,png}",
-      "libraries": "sqlite3"
+      "libraries": [
+        "sqlite3",
+        "z"
+      ]
     },
     {
       "name": "YahooAdapter",
@@ -203,7 +206,7 @@
 
         ],
         "mopub-ios-sdk": [
-          "~> 3.9.0"
+          "~> 4.1.0"
         ]
       },
       "source_files": "mediation/mediating/MoPub/*.{h,m}",
@@ -216,7 +219,7 @@
 
         ],
         "Google-Mobile-Ads-SDK": [
-          "~> 7.3.1"
+          "~> 7.5.2"
         ]
       },
       "xcconfig": {
