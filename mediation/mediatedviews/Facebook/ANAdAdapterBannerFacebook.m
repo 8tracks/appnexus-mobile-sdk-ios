@@ -38,6 +38,13 @@
         self.fbAdView.frame = CGRectMake(0, 0, kFBAdSize320x50.size.width, kFBAdSize320x50.size.height);
         self.fbAdView.delegate = self;
         [self.fbAdView loadAd];
+    } else if (size.height == kFBAdSizeHeight250Rectangle.size.height) {
+        self.fbAdView = [[FBAdView alloc] initWithPlacementID:idString
+                                                       adSize:kFBAdSizeHeight250Rectangle
+                                           rootViewController:rootViewController];
+        self.fbAdView.frame = CGRectMake(0, 0, size.width, size.height);
+        self.fbAdView.delegate = self;
+        [self.fbAdView loadAd];
     } else {
         [self.delegate didFailToLoadAd:ANAdResponseUnableToFill];
     }
